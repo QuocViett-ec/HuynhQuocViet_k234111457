@@ -1,0 +1,7 @@
+Given URL with the following structure: 
+https://tranduythanh.com/category/angularjs/?id=1 
+
+Protocol: https://
+domain: tranduythanh.com
+parameter: ?id=1 
+Path: /category/angularjs/

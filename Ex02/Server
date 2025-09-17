@@ -1,0 +1,10 @@
+- A server is a computer that provides resources and services to other computers.
+- Usually installed with specialized software(thw đc cài đặt phần mềm chuyên dụng) to be able to provide
+- Server with high configuration(cấu hình cao), stable performance
+- A server can be used for one or more purposes. The hostname(tên máy chủ) is usually associated with the intended(mục đích) use.
+
+For example:
+ File server
+ Application server
+ Mail server
+ Web server

@@ -1,0 +1,11 @@
+Traditional full-stack workflow (best for custom sites / serious e-commerce)
+- Define goals & requirements — audience, business needs, must-have features (catalog, cart, payment, shipping).
+- Research & plan — sitemap, user flows, tech choices (CMS vs custom, languages, DB).
+- Design (UX/UI) — wireframes → high-fi mockups → design system.
+- Choose stack & hosting — e.g., LAMP/LEMP, Node.js, or modern JAMstack; pick VPS / cloud / managed host based on scale and security needs.
+- Frontend development — implement responsive HTML/CSS/JS, accessibility, performance optimizations.
+- Backend development — APIs, authentication, database schema, business logic.
+- Integrations — payment gateway, shipping, analytics, CDN, email. (For e-commerce ensure PCI / HTTPS and secure payment flows.)
+- Testing & QA — unit + integration tests, cross-browser, load testing, security scans.
+- Deploy & monitor — CI/CD, uptime monitoring, logging, backups.
+- Maintain & iterate — bug fixes, feature releases, security updates.

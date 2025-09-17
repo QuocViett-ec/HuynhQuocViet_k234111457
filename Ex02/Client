@@ -1,0 +1,3 @@
+- The client is the machine that exploits(khai thác) the server's service
+- For each service, there is usually specialized software to support the exploitation
+- A computer can be both a client and a server:  Can exploit its own service.

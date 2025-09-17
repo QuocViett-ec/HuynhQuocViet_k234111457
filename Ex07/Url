@@ -1,0 +1,8 @@
+- URL-Uniform Resource Locator
+- URLs are unique identifiers for Internet resources
+- URL Indicates :
+    How to access
+    Resource location
+- General syntax:
+protocol://host_name[:port_num][/path][/file_name]
+![alt text](image.png)

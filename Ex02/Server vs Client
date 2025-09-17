@@ -1,0 +1,5 @@
+- Server:
+In a computer network, a computer that is used by other computers to access it is called a server.
+- Client:
+The computers that access the server are called clients.
+- Desktops and laptops used every day are not servers because they are mainly used as clients. we usually use it to browse the web, to send emails, or run personal applications. they do not normally provide continuous services to others machines. Only when configured with server software and network setup(like running a web server) can a desktop/laptop act as a server
