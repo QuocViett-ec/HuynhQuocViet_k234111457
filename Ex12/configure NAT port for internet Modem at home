@@ -1,0 +1,48 @@
+ Các bước thực hiện
+1. Chuẩn bị trước khi NAT
+
+- Kiểm tra modem bạn đang dùng của nhà mạng nào (VNPT, Viettel, FPT…).
+- Máy tính của bạn phải được cài Web Server (ví dụ: IIS, Apache, hoặc XAMPP).
+- Biết địa chỉ IP Private của máy tính trong LAN (dùng ipconfig để xem, ví dụ: 192.168.1.5).
+
+2. Truy cập trang cấu hình Modem
+
+- Mở trình duyệt → nhập Default Gateway (ví dụ: 192.168.1.1 hoặc 192.168.100.1).
+- Đăng nhập modem bằng tài khoản quản trị (mặc định hay được in ở dưới modem).
+
+3. Cấu hình NAT (Port Forwarding)
+
+- Vào mục NAT / Port Forwarding / Virtual Server (tùy modem).
+- Thêm một rule:
+    Service name: WebServer (tùy bạn đặt)
+    Protocol: TCP
+    External Port: 80 (nếu chạy web, hoặc 3389 nếu muốn mở Remote Desktop)
+    Internal IP: địa chỉ IP của máy bạn (ví dụ: 192.168.1.5)
+    Internal Port: 80 (hoặc 3389 cho RDP)
+
+- Ý nghĩa: khi có người truy cập IP Public của modem tại cổng đó → modem sẽ chuyển tiếp vào máy bạn.
+
+4. Xác định IP Public và cấu hình Dynamic DNS
+
+- IP Public của modem có thể thay đổi (do nhà mạng cấp DHCP).
+- Vào Google gõ “What is my IP” để biết IP Public hiện tại.
+- Nếu IP thay đổi thường xuyên → dùng Dynamic DNS (No-IP) để có tên miền cố định.
+
+Cách làm:
+- Đăng ký tài khoản ở https://www.noip.com
+- Tạo hostname (ví dụ: myserver.ddns.net).
+- Cài phần mềm No-IP Update Client trên máy chủ để tự động cập nhật IP Public khi thay đổi.
+
+5. Kiểm tra kết nối từ bên ngoài
+
+- Dùng mạng 4G hoặc một máy ở mạng khác, nhập:
+- http://<IP_Public> hoặc http://myserver.ddns.net (nếu đã dùng No-IP).
+- Nếu NAT thành công → bạn sẽ thấy website IIS hoặc Remote Desktop login.
+
+Bảo mật rất quan trọng
+
+- Khi mở port ra Internet, máy dễ bị tấn công.
+- Giải pháp an toàn hơn:
+- Chỉ mở những port cần thiết.
+- Dùng mật khẩu mạnh.
+- Cân nhắc cài VPN Server trên modem thay vì NAT trực tiếp.

@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\Nam3\\TaiLieuHocKi6\\WebDev\\Exercise_hqv_k234111457\\Ex09\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6D4A2D8A-7758-480C-868E-675069F95A0A}|Ex09\\Ex09.csproj|e:\\nam3\\tailieuhocki6\\webdev\\exercise_hqv_k234111457\\ex09\\ex09\\home.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6D4A2D8A-7758-480C-868E-675069F95A0A}|Ex09\\Ex09.csproj|solutionrelative:ex09\\home.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "home.html",
+              "DocumentMoniker": "E:\\Nam3\\TaiLieuHocKi6\\WebDev\\Exercise_hqv_k234111457\\Ex09\\Ex09\\home.html",
+              "RelativeDocumentMoniker": "Ex09\\home.html",
+              "ToolTip": "E:\\Nam3\\TaiLieuHocKi6\\WebDev\\Exercise_hqv_k234111457\\Ex09\\Ex09\\home.html",
+              "RelativeToolTip": "Ex09\\home.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-09-22T13:49:09.09Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{56df62a4-05a3-4e5b-aa1a-99371ccfb997}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

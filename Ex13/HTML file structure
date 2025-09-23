@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+Tells the browser that this is an HTML5 document.
+It helps the browser display the page correctly.
+
+<html> ... </html>
+The root element.
+All HTML content is placed inside these tags.
+
+<head> ... </head>
+Contains information about the web page (not shown directly).
+Examples: page title, metadata, CSS, scripts.
+
+<title> ... </title>
+Sets the text that appears on the browser tab.
+
+<body> ... </body>
+Contains the visible content that users see on the web page.
+Includes headings, paragraphs, images, links, tables, etc.
+
+<p>paragraph</p>
+<h1>header</h1>
