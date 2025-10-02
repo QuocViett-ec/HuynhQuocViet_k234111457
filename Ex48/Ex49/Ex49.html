@@ -1,0 +1,122 @@
+<html>
+    <head>
+        <title>hqv - Ex49</title>
+        <style>
+            body {
+                background-color: #CCFFFF;
+                font-family: Arial, sans-serif;
+            }
+            h2 {
+                color: red;
+            }
+            .container {
+                border: 2px solid blue;
+                padding: 15px;
+                width: 600px;
+                margin: 20px auto;
+                background-color: #CCFFFF;
+            }
+            hr {
+                border: 1px solid gray;
+            }
+            .btn {
+                border: none;
+                background: none;
+                cursor: pointer;
+                margin: 0 10px;
+            }
+            .btn img {
+                vertical-align: middle;
+            }
+            .btn span {
+                display: block;
+                text-align: center;
+                font-weight: bold;
+                font-size: 14px;
+            }
+            .search { color: green; }
+            .help { color: blue; }
+            .cancel { color: red; }
+            
+            /* riêng cho ô date */
+            .date-input {
+                width: 120px;
+                padding: 4px;
+                margin: 0 5px;
+            }
+
+            /* riêng cho ô keywords */
+            .keyword-input {
+                width: 95%;
+                padding: 5px;
+                margin: 5px 0;
+            }
+
+            label {
+                margin-right: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h2>Online Classifieds Search Form</h2>
+            <hr/>
+
+            <p><b>1) Search for a classified in the following sections:</b></p>
+            <label><input type="radio" name="section"> Employment</label>
+            <label><input type="radio" name="section"> Personal</label><br>
+            <label><input type="radio" name="section"> For Sale</label>
+            <label><input type="radio" name="section"> Miscellaneous</label><br>
+            <label><input type="radio" name="section"> Housing</label>
+            <label><input type="radio" name="section"> All of the above</label>
+
+            <p><b>2) Search the following publications:</b></p>
+            <label><input type="checkbox" checked> Midwest times</label>
+            <label><input type="checkbox"> Modern News</label>
+            <label><input type="checkbox"> Employment Today</label><br>
+            <label><input type="checkbox" checked> Great Lakes Classifieds</label>
+            <label><input type="checkbox"> Middleton Daily</label>
+            <label><input type="checkbox"> Cashtown Daily News</label>
+
+            <p><b>3) From to</b>
+                <input type="text" class="date-input" placeholder="mm/dd/yy"> to 
+                <input type="text" class="date-input" placeholder="mm/dd/yy">
+            </p>
+
+            <p><b>4) Enter a few keywords to describe the classified.</b></p>
+            <input type="text" class="keyword-input" placeholder="Enter keywords...">
+
+            <p><b>5) Click one of the options below:</b></p>
+            <div>
+                <button class="btn" onclick="doSearch()">
+                    <img src="images/Search.gif" alt="Search">
+                    
+                </button>
+
+                <button class="btn" onclick="window.location.href='help.html'">
+                    <img src="images/Help.gif" alt="Help">
+                    
+                </button>
+
+                <button class="btn" onclick="doCancel()">
+                    <img src="images/Cancel.gif" alt="Cancel">
+              
+                </button>
+            </div>
+        </div>
+
+        <script>
+            function doSearch() {
+                alert("Search simulation");
+            }
+            function doCancel() {
+                // Xóa tất cả input trong form
+                document.querySelectorAll('input[type="text"], input[type="radio"], input[type="checkbox"]')
+                    .forEach(el => {
+                        if (el.type === "text") el.value = "";
+                        if (el.type === "radio" || el.type === "checkbox") el.checked = false;
+                    });
+            }
+        </script>
+    </body>
+</html>
