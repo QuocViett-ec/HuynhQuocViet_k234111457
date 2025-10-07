@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>hqv-custo</title>
+    </head>
+    <body>
+        <form name="frm_customer_input">
+            <table>
+                <tr>
+                    <td>Customer ID:</td>
+                    <td><input type="text" name="customer_id" id="customer_id" /></td>
+                </tr>
+                <tr>
+                    <td>Customer Name:</td>
+                    <td><input type="text" name="customer_name" id="customer_name" /></td>
+                </tr>
+                <tr>
+                    <td>Customer Email:</td>
+                    <td><input type="email" name="customer_email" id="customer_email" /></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="checkbox" value="VIP" id="customer_type" name="customer_type"/>
+                        <label for="customer_type">Is VIP</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <button type="button">Save Infor</button>
+                        <button type="reset">Clear</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <p>RESULT:</p>
+        <form name="frm_customer_output">
+            <fieldset>
+                <legend>Customer Information:</legend>
+                Customer ID: <input type="text" name="customer_id_result" id="customer_id_result"/>
+                <br/>
+                Customer Name: <input type="text" name="customer_name_result" id="customer_name_result"/>
+                <br/>
+                Email:
+                <h3 id="email"></h3>
+            </fieldset>
+        </form>
+    </body>
+</html>
