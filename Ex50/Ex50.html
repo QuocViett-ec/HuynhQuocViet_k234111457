@@ -1,0 +1,196 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Ex50 - hqv</title>
+        <style>
+            body {
+                background-color: #CCFFFF;
+                font-family: 'Times New Roman', serif;
+                font-size: 14px;
+                margin: 20px;
+            }
+
+            h2 {
+                font-size: 20px;
+                font-weight: bold;
+            }
+
+            fieldset {
+                background-color: #CCFFFF;
+                border: 2px solid #3366CC;
+                width: 700px;
+                margin: 0 auto;
+            }
+
+            table {
+                border-collapse: collapse;
+                width: 100%;
+                background-color: #E6F9FF;
+            }
+
+            th, td {
+                border: 1px solid #999;
+                padding: 5px 10px;
+                text-align: left;
+            }
+
+            th {
+                background-color: #DDEEFF;
+            }
+
+            label {
+                display: inline-block;
+                width: 180px;
+                margin-top: 5px;
+            }
+
+            textarea {
+                width: 95%;
+                height: 80px;
+            }
+
+            input[type="text"], select {
+                padding: 3px;
+                margin-right: 10px;
+            }
+
+            .button-area {
+                margin-top: 10px;
+            }
+
+            .footer {
+                margin-top: 10px;
+                font-size: 12px;
+            }
+
+            img {
+                display: block;
+                margin: 0 auto;
+            }
+        </style>
+    </head>
+    <body>
+
+        <fieldset>
+            <img src="DeLong.jpg" alt="DeLong Enterprises Logo" width="400">
+
+            <h2>Travel Expense Report</h2>
+            <hr>
+
+            <form id="expenseForm" onsubmit="return submitForm()">
+
+                <p>
+                    1) First Name: <input type="text" name="fname" size="15">
+                    Last Name: <input type="text" name="lname" size="15">
+                </p>
+
+                <p>
+                    2) Social Security Number: <input type="text" name="ssn" size="20">
+                </p>
+
+                <p>
+                    3) Department:
+                    <select name="department">
+                        <option>Accounting</option>
+                        <option>Marketing</option>
+                        <option>HR</option>
+                        <option>IT</option>
+                    </select>
+                </p>
+
+                <p>
+                    4) Describe the purpose of your trip:<br>
+                    <textarea name="purpose"></textarea>
+                </p>
+
+                <p>
+                    5) Itemize your travel expenses:
+                </p>
+
+                <table>
+                    <tr>
+                        <th>Date</th>
+                        <th>Description</th>
+                        <th>Category</th>
+                        <th>Amount</th>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="date1" placeholder="mm/dd/yy"></td>
+                        <td><input type="text" name="desc1"></td>
+                        <td>
+                            <select name="cat1">
+                                <option>Meal</option>
+                                <option>Hotel</option>
+                                <option>Taxi</option>
+                                <option>Other</option>
+                            </select>
+                        </td>
+                        <td><input type="text" name="amt1" size="8"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="date2" placeholder="mm/dd/yy"></td>
+                        <td><input type="text" name="desc2"></td>
+                        <td>
+                            <select name="cat2">
+                                <option>Meal</option>
+                                <option>Hotel</option>
+                                <option>Taxi</option>
+                                <option>Other</option>
+                            </select>
+                        </td>
+                        <td><input type="text" name="amt2" size="8"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="date3" placeholder="mm/dd/yy"></td>
+                        <td><input type="text" name="desc3"></td>
+                        <td>
+                            <select name="cat3">
+                                <option>Meal</option>
+                                <option>Hotel</option>
+                                <option>Taxi</option>
+                                <option>Other</option>
+                            </select>
+                        </td>
+                        <td><input type="text" name="amt3" size="8"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="date4" placeholder="mm/dd/yy"></td>
+                        <td><input type="text" name="desc4"></td>
+                        <td>
+                            <select name="cat4">
+                                <option>Meal</option>
+                                <option>Hotel</option>
+                                <option>Taxi</option>
+                                <option>Other</option>
+                            </select>
+                        </td>
+                        <td><input type="text" name="amt4" size="8"></td>
+                    </tr>
+                </table>
+
+                <p>
+                    6) Have you submitted your receipts?
+                    <input type="radio" name="receipt" value="yes"> Yes
+                    <input type="radio" name="receipt" value="no"> No
+                </p>
+
+                <div class="button-area">
+                    <input type="submit" value="Submit travel expenses">
+                    <input type="reset" value="Reset">
+                </div>
+
+                <div class="footer">
+                    Questions? Contact Debbie Larson in Accounting (ext. 2150).
+                </div>
+
+            </form>
+        </fieldset>
+
+        <script>
+            function submitForm() {
+                alert("Travel expense report submitted successfully!");
+                return false; 
+            }
+        </script>
+    </body>
+</html>

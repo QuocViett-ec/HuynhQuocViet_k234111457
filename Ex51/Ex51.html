@@ -1,0 +1,113 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>hqv - Newborn Registration</title>
+        <style>
+            body {
+                background-color: teal;
+                font-family: Arial, sans-serif;
+            }
+
+            .container {
+                width: 700px;
+                margin: auto;
+                border: 2px solid blue;
+                background-color: #008080;
+                padding: 15px;
+            }
+
+            h1 {
+                text-align: center;
+                color: white;
+            }
+            
+            p{
+                color: white;
+                font-size: 14px;
+            }
+            
+
+            .logo {
+                display: block;
+                margin: auto;
+            }
+
+            label {
+                display: inline-block;
+                width: 150px;
+                margin-bottom: 5px;
+            }
+
+            input[type="text"], input[type="date"], select, textarea {
+                padding: 3px;
+                margin: 3px;
+            }
+
+            .btn {
+                text-align: center;
+                margin-top: 10px;
+            }
+
+            .btn input {
+                padding: 5px 15px;
+                margin: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <img src="Logo.gif" alt="Hospital Logo" class="logo">
+
+            <h1>Newborn Registration</h1>
+
+            <form>
+                <p>Date: <input type="text" placeholder="mm/dd/yy"></p>
+
+                <p>1) Infant's first name: 
+                    <input type="text"> 
+                    Last: <input type="text">
+                </p>
+
+                <p>2) Medical Record #: 
+                    <input type="text">
+                </p>
+
+                <p>3) Date of birth: 
+                    <input type="text" placeholder="mm/dd/yy">
+                </p>
+
+                <p>4) Birth weight: 
+                    <input type="text">
+                </p>
+
+                <p>5) APGAR score: 
+                    <input type="text">
+                </p>
+
+                <p>6) Mother's first name: 
+                    <input type="text"> 
+                    Last: <input type="text">
+                </p>
+
+                <p>7) Father's first name: 
+                    <input type="text"> 
+                    Last: <input type="text">
+                </p>
+
+                <p>8) Physician (check all that apply): <br>
+                    <select multiple size="4"  >
+                        <option>Dr. Warren Albert</option>
+                        <option>Dr. Maria Alvarez</option>
+                        <option>Dr. Karen Brinkman</option>
+                        <option>Dr. Micheal Kerry</option>
+                    </select>
+                </p>
+
+                <div class="btn">
+                    <input type="button" value="Register" onclick="alert('Registration submitted!')">
+                    <input type="reset" value="Cancel">
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
