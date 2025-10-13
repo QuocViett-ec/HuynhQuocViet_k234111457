@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>hqv</title>
+    </head>
+    <body>
+        <h2>Contact Information Received</h2>
+        <script>
+            const params = new URLSearchParams(window.location.search);
+            document.write("<p><b>Full name:</b> " + params.get("fullname") + "</p>");
+            document.write("<p><b>Email:</b> " + params.get("email") + "</p>");
+            document.write("<p><b>Send to:</b> " + params.get("sendto") + "</p>");
+            document.write("<p><b>Title:</b> " + params.get("title") + "</p>");
+            document.write("<p><b>Content:</b> " + params.get("content") + "</p>");
+        </script>
+    </body>
+</html>

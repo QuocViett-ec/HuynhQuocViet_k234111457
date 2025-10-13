@@ -1,0 +1,94 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Product List</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+            }
+            table {
+                width: 70%;
+                border-collapse: collapse;
+                margin: 30px auto;
+                border: 1px solid #000;
+            }
+            th, td {
+                border: 1px solid #ccc;
+                padding: 8px 10px;
+                text-align: left;
+            }
+            th {
+                background-color: #f8f8f8;
+            }
+            input[type="text"] {
+                width: 90%;
+                padding: 3px;
+            }
+            .total-row {
+                border-top: 1px solid #ccc;
+            }
+            .total-label {
+                text-align: right;
+                font-weight: bold;
+                padding-right: 15px;
+            }
+            .total-input {
+                width: 120px;
+            }
+            .sum-btn {
+                background-color: orange;
+                border: 1px solid #a66d00;
+                color: white;
+                padding: 6px 20px;
+                font-weight: bold;
+                cursor: pointer;
+            }
+            .sum-btn:hover {
+                background-color: #cc8400;
+            }
+        </style>
+    </head>
+    <body>
+        <form action="results.html" method="get">
+            <table>
+                <tr>
+                    <th>Part Number</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Qty</th>
+                    <th>Item table</th>     
+                </tr>
+                <tr>
+                    <td>C112</td>
+                    <td>Mouse</td>
+                    <td>19.95$</td>
+                    <td><input type="text" name="qty1"></td>
+                    <td><input type="text" name="item1"></td>
+                </tr>
+                <tr>
+                    <td>B124</td>
+                    <td>Keyboard US</td>
+                    <td>29.95$</td>
+                    <td><input type="text" name="qty2"></td>
+                    <td><input type="text" name="item2"></td>
+                </tr>
+                <tr>
+                    <td>U125</td>
+                    <td>USB KingMax</td>
+                    <td>39.95$</td>
+                    <td><input type="text" name="qty3"></td>
+                    <td><input type="text" name="item3"></td>
+                </tr>
+                <tr class="total-row">
+                    <td colspan="4" class="total-label">Total:</td>
+                    <td><input type="text" name="total" class="total-input"></td>
+                </tr>
+                <tr>
+                    <td colspan="5" style="text-align:right;">
+                        <input type="submit" value="Sum" class="sum-btn">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

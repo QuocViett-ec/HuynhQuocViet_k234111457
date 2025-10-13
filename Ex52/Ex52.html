@@ -1,0 +1,103 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Ex52-hqv</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f2f2f2;
+                display: flex;
+                justify-content: center;
+                padding: 30px;
+            }
+
+            form {
+                background: white;
+                border: 1px solid #ccc;
+                padding: 20px;
+                width: 600px;  
+                border-radius: 4px;
+            }
+
+            h3 {
+                margin-top: 0;
+                color: #333;
+            }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+
+            td {
+                padding: 8px;
+                vertical-align: top;
+            }
+
+            input[type="text"],
+            input[type="email"],
+            select,
+            textarea {
+                width: 100%;
+                padding: 6px;
+                box-sizing: border-box;
+            }
+
+            textarea {
+                height: 100px;
+            }
+
+            input[type="submit"] {
+                background-color: #b33c64;
+                color: white;
+                border: none;
+                padding: 8px 20px;
+                cursor: pointer;
+                border-radius: 4px;
+            }
+
+            input[type="submit"]:hover {
+                background-color: #a13057;
+            }
+        </style>
+    </head>
+    <body>
+        <form method="get" action="result.html">
+            <h3>Contact the editorial office</h3>
+            <table>
+                <tr>
+                    <td><label for="fullname">Full name</label></td>
+                    <td colspan="2"><input type="text" id="fullname" name="fullname" required></td>
+                </tr>
+                <tr>
+                    <td><label for="email">Email</label></td>
+                    <td><input type="email" id="email" name="email" required></td>
+                    <td>
+                        <label for="sendto">Send to</label>
+                        <select id="sendto" name="sendto">
+                            <option>Editorial board</option>
+                            <option>News Department</option>
+                            <option>Board of Perspectives</option>
+                            <option>World Board</option>
+                            <option>Business Department</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="title">Title</label></td>
+                    <td colspan="2"><input type="text" id="title" name="title"></td>
+                </tr>
+                <tr>
+                    <td><label for="content">Content</label></td>
+                    <td colspan="2"><textarea id="content" name="content"></textarea></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td colspan="2" style="text-align:right;">
+                        <input type="submit" value="Send">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

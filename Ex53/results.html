@@ -1,0 +1,24 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Sum Result</title>
+        <style>
+            body { 
+                font-family: Arial, sans-serif;
+                margin: 30px;
+            }
+            h2 { color: #333; }
+        </style>
+    </head>
+    <body>
+        <h2>Result Page (GET Method)</h2>
+        <script>
+            const params = new URLSearchParams(window.location.search);
+            document.write("<b>Part C112:</b> Qty = " + params.get("qty1") + ", Item = " + params.get("item1") + "<br>");
+            document.write("<b>Part B124:</b> Qty = " + params.get("qty2") + ", Item = " + params.get("item2") + "<br>");
+            document.write("<b>Part U125:</b> Qty = " + params.get("qty3") + ", Item = " + params.get("item3") + "<br>");
+            document.write("<hr>");
+            document.write("<b>Total:</b> " + params.get("total"));
+        </script>
+    </body>
+</html>
