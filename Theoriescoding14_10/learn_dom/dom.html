@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>hqv</title>
+        <script type="text/javascript">
+            function createP()
+            {
+                p=document.createElement("p");
+                date=new Date();
+                p.innerText=date.toLocaleString();
+                red=Math.floor(Math.random()*256);
+                green=Math.floor(Math.random()*256);
+                blue=Math.floor(Math.random()*256);
+                p.setAttribute("style","background-color:rgb("+red+","+green+","+blue+")");
+                my_div=document.getElementById("my_div");
+                my_div.appendChild(p);
+            }
+        </script>
+    </head>
+    <body>
+        <form name="my_form">
+            <button type="button" onclick="createP()">Create P</button>
+            <div id="my_div" style="width:100%; height:300px; overflow-y:scroll;">
+                
+            </div>
+        </form>
+        <script type="text/javascript">
+            setInterval(create_p,1000)
+        </script>
+    </body>
+</html>
