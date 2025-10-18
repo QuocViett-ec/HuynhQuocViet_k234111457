@@ -1,0 +1,118 @@
+<html>
+  <head>
+    <title>hqv</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 40px;
+        background-color: #f5f5f5;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 500px;
+        background-color: white;
+        margin: auto;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+      }
+
+      td {
+        border: 1px solid #ccc;
+        padding: 10px;
+        text-align: center;
+      }
+
+      input[type="text"] {
+        width: 80%;
+        padding: 4px;
+        text-align: center;
+      }
+
+      button {
+        margin: 3px;
+        padding: 6px 10px;
+        cursor: pointer;
+        border: none;
+        background-color: #007bff;
+        color: white;
+        border-radius: 4px;
+        transition: background-color 0.2s;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+
+      h2 {
+        text-align: center;
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <caption>
+        Math Function
+      </caption>
+      <tr>
+        <td>a:</td>
+        <td><input type="text" id="a" value="30" /></td>
+      </tr>
+      <tr>
+        <td>b:</td>
+        <td><input type="text" id="b" value="45" /></td>
+      </tr>
+      <tr>
+        <td>c:</td>
+        <td><input type="text" id="c" value="90" /></td>
+      </tr>
+      <tr>
+        <td>Result:</td>
+        <td><input type="text" id="result" readonly /></td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <button onclick="calcMax()">MAX</button>
+          <button onclick="calcMin()">MIN</button>
+          <button onclick="calcSin()">sin(a)</button>
+          <button onclick="calcCos()">cos(a)</button>
+          <button onclick="calcPower()">a^b</button>
+        </td>
+      </tr>
+    </table>
+
+    <script>
+      function getValues() {
+        let a = parseFloat(document.getElementById("a").value);
+        let b = parseFloat(document.getElementById("b").value);
+        let c = parseFloat(document.getElementById("c").value);
+        return { a, b, c };
+      }
+
+      function calcMax() {
+        const { a, b, c } = getValues();
+        document.getElementById("result").value = Math.max(a, b, c);
+      }
+
+      function calcMin() {
+        const { a, b, c } = getValues();
+        document.getElementById("result").value = Math.min(a, b, c);
+      }
+
+      function calcSin() {
+        const { a } = getValues();
+        document.getElementById("result").value = Math.sin((a * Math.PI) / 180);
+      }
+
+      function calcCos() {
+        const { a } = getValues();
+        document.getElementById("result").value = Math.cos((a * Math.PI) / 180);
+      }
+
+      function calcPower() {
+        const { a, b } = getValues();
+        document.getElementById("result").value = Math.pow(a, b);
+      }
+    </script>
+  </body>
+</html>

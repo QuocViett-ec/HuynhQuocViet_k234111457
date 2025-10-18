@@ -1,0 +1,221 @@
+<html>
+  <head>
+    <title>hqv</title>
+    <style>
+      :root {
+        --bd: #cfcfcf;
+      }
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: #f6f6f6;
+        margin: 40px;
+      }
+      .wrap {
+        width: 720px;
+        margin: auto;
+        background: #fff;
+        border: 1px solid var(--bd);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+      }
+      .title {
+        background: #eaf4ff;
+        border-bottom: 1px solid var(--bd);
+        padding: 14px 18px;
+        font-size: 22px;
+        font-weight: 700;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+        padding: 18px;
+      }
+      .panel {
+        border: 1px solid var(--bd);
+        padding: 12px;
+      }
+      .panel h3 {
+        margin: -8px 0 10px;
+        font-size: 20px;
+      }
+      textarea {
+        width: 100%;
+        min-height: 130px;
+        resize: vertical;
+        padding: 8px;
+      }
+      .controls {
+        padding: 0 18px 18px;
+      }
+      .controls .row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+        margin-bottom: 10px;
+      }
+      button,
+      a.btn {
+        display: inline-block;
+        text-align: center;
+        border: 1px solid #b9b9b9;
+        background: #f3f3f3;
+        padding: 8px;
+        border-radius: 4px;
+        cursor: pointer;
+        user-select: none;
+      }
+      button:hover,
+      a.btn:hover {
+        background: #e9e9e9;
+      }
+      button:active {
+        transform: translateY(1px);
+      }
+      .full {
+        grid-column: 1 / -1;
+      }
+      .muted {
+        color: #666;
+        font-size: 12px;
+        margin-top: 6px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="title">Using String Processing functions</div>
+
+      <div class="grid">
+        <div class="panel">
+          <h3>Input Data:</h3>
+          <textarea id="input"></textarea>
+          <div class="muted">Nhập đoạn văn/chuỗi vào đây.</div>
+        </div>
+
+        <div class="panel">
+          <h3>Result:</h3>
+          <textarea id="output" readonly></textarea>
+          <div class="muted">Kết quả thao tác sẽ hiển thị ở đây.</div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <div class="row">
+          <button onclick="enterData()">Enter Data</button>
+          <button onclick="countUpper()">
+            Count the number of uppercase characters
+          </button>
+        </div>
+        <div class="row">
+          <button onclick="toUpper()">Uppercase display</button>
+          <button onclick="oneWordPerLine()">Output one word per line</button>
+        </div>
+        <div class="row">
+          <button onclick="toLower()">lowercase display</button>
+          <button onclick="wordCount()">Word count</button>
+        </div>
+        <div class="row">
+          <button onclick="countLower()">
+            Count the number of lowercase characters
+          </button>
+          <button onclick="printVowelsConsonants()">
+            print vowels, consonants
+          </button>
+        </div>
+        <div class="row">
+          <a
+            class="btn full"
+            target="_blank"
+            href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String"
+          >
+            W3C's String Processing Website
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Helpers
+      const $ = (id) => document.getElementById(id);
+      const getText = () => $("input").value ?? "";
+      const setResult = (v) => ($("output").value = v);
+
+      // 1) Copy input to result
+      function enterData() {
+        setResult(getText());
+      }
+
+      // 2) Count UPPERCASE A–Z
+      function countUpper() {
+        const m = getText().match(/[A-ZÀ-Ý]/g); // hỗ trợ một số ký tự có dấu (Latin mở rộng)
+        const n = m ? m.length : 0;
+        setResult(`Uppercase characters: ${n}`);
+      }
+
+      // 3) To UPPERCASE
+      function toUpper() {
+        setResult(getText().toUpperCase());
+      }
+
+      // 4) Output one word per line
+      function oneWordPerLine() {
+        const words = getText()
+          .trim()
+          .split(/[\s,.;:!?()\[\]{}"'+\-\\/]+/g)
+          .filter(Boolean);
+        setResult(words.join("\n"));
+      }
+
+      // 5) To lowercase
+      function toLower() {
+        setResult(getText().toLowerCase());
+      }
+
+      // 6) Word count (bỏ khoảng trắng thừa & dấu câu phổ biến)
+      function wordCount() {
+        const words = getText()
+          .trim()
+          .split(/[\s,.;:!?()\[\]{}"'+\-\\/]+/g)
+          .filter(Boolean);
+        setResult(`Word count: ${words.length}`);
+      }
+
+      // 7) Count lowercase a–z
+      function countLower() {
+        const m = getText().match(/[a-zà-ý]/g);
+        const n = m ? m.length : 0;
+        setResult(`Lowercase characters: ${n}`);
+      }
+
+      // 8) Print vowels & consonants with counts
+      function printVowelsConsonants() {
+        const txt = getText();
+        const letters = txt.match(/[A-Za-zÀ-Ỵà-ỵ]/g) || []; // chỉ lấy ký tự chữ
+        const vowels = letters.filter((ch) =>
+          /[AEIOUaeiouÁÀÃÂĂÄÉÈÊÍÌÎÓÒÔÕÖÚÙÛÜÝáàãâăäéèêíìîóòôõöúùûüý]/.test(ch)
+        );
+        const consonants = letters.length - vowels.length;
+
+        // In ra tất cả nguyên âm xuất hiện (không trùng) và phụ âm (không trùng)
+        const uniq = (arr) => [...new Set(arr)];
+        const vowelList =
+          uniq(vowels.map((c) => c.toLowerCase())).join(", ") || "(none)";
+
+        const consonantChars = letters
+          .filter(
+            (ch) =>
+              !/[AEIOUaeiouÁÀÃÂĂÄÉÈÊÍÌÎÓÒÔÕÖÚÙÛÜÝáàãâăäéèêíìîóòôõöúùûüý]/.test(
+                ch
+              )
+          )
+          .map((c) => c.toLowerCase());
+        const consonantList = uniq(consonantChars).join(", ") || "(none)";
+
+        setResult(
+          `Vowels: ${vowels.length}  -> ${vowelList}
+Consonants: ${consonants}  -> ${consonantList}`
+        );
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,134 @@
+<html>
+  <head>
+    <title>hqv</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f8f8;
+        margin: 40px;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 350px;
+        margin: auto;
+        background-color: white;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+      }
+
+      th {
+        background-color: #d5f0c8;
+        padding: 10px;
+        font-size: 18px;
+      }
+
+      td {
+        border: 1px solid #ccc;
+        padding: 8px;
+        text-align: center;
+      }
+
+      input[type="text"] {
+        width: 80%;
+        padding: 4px;
+        text-align: center;
+      }
+
+      button {
+        margin: 5px;
+        padding: 6px 15px;
+        border: 1px solid orange;
+        background-color: #fff8e1;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: 0.2s;
+      }
+
+      button:hover {
+        background-color: #ffeb99;
+      }
+
+      #result {
+        color: red;
+        font-weight: bold;
+      }
+
+      h2 {
+        text-align: center;
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <th colspan="2">The quadratic equation</th>
+      </tr>
+      <tr>
+        <td>a:</td>
+        <td><input type="text" id="a" placeholder="Enter a" /></td>
+      </tr>
+      <tr>
+        <td>b:</td>
+        <td><input type="text" id="b" placeholder="Enter b" /></td>
+      </tr>
+      <tr>
+        <td>c:</td>
+        <td><input type="text" id="c" placeholder="Enter c" /></td>
+      </tr>
+      <tr>
+        <td>Result:</td>
+        <td><span id="result"></span></td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <button onclick="findSolution()">Find solution</button>
+          <button onclick="clearAll()">Clear</button>
+        </td>
+      </tr>
+    </table>
+
+    <script>
+      function findSolution() {
+        let a = parseFloat(document.getElementById("a").value);
+        let b = parseFloat(document.getElementById("b").value);
+        let c = parseFloat(document.getElementById("c").value);
+        let result = document.getElementById("result");
+
+        if (isNaN(a) || isNaN(b) || isNaN(c)) {
+          result.textContent = "Please enter valid numbers!";
+          return;
+        }
+
+        if (a === 0) {
+          if (b === 0) {
+            result.textContent = c === 0 ? "Infinite solutions" : "No solution";
+          } else {
+            let x = -c / b;
+            result.textContent = `Linear: x = ${x}`;
+          }
+          return;
+        }
+
+        let delta = b * b - 4 * a * c;
+        if (delta < 0) {
+          result.textContent = "No real solution";
+        } else if (delta === 0) {
+          let x = -b / (2 * a);
+          result.textContent = `x1 = x2 = ${x}`;
+        } else {
+          let x1 = (-b + Math.sqrt(delta)) / (2 * a);
+          let x2 = (-b - Math.sqrt(delta)) / (2 * a);
+          result.textContent = `x1 = ${x1};  x2 = ${x2}`;
+        }
+      }
+
+      function clearAll() {
+        document.getElementById("a").value = "";
+        document.getElementById("b").value = "";
+        document.getElementById("c").value = "";
+        document.getElementById("result").textContent = "";
+      }
+    </script>
+  </body>
+</html>
