@@ -1,0 +1,94 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>hqv XML-DOM Parser</title>
+    <style>
+      table {
+        width: 300px;
+        border-collapse: collapse;
+        margin: 30px auto;
+        text-align: left;
+      }
+      th {
+        background-color: #dbead5;
+        text-align: center;
+        padding: 10px;
+        border: 1px solid #999;
+      }
+      td {
+        border: 1px solid #999;
+        padding: 8px;
+      }
+      tr:hover {
+        background-color: blue;
+        color: white;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <table id="studentTable">
+      <thead>
+        <tr>
+          <th colspan="2">Student Information</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <script>
+      // XML data string
+      const xmlString = `
+      <student>
+        <id>k234111457</id>
+        <name>Huynh Quoc Viet</name>
+        <birthday>06/09/2005</birthday>
+        <gender>Male</gender>
+      </student>
+    `;
+
+      // Parse XML
+      const parser = new DOMParser();
+      const xmlDoc = parser.parseFromString(xmlString, "text/xml");
+
+      // Extract values
+      const id = xmlDoc.getElementsByTagName("id")[0].textContent;
+      const name = xmlDoc.getElementsByTagName("name")[0].textContent;
+      const birthday = xmlDoc.getElementsByTagName("birthday")[0].textContent;
+      const gender = xmlDoc.getElementsByTagName("gender")[0].textContent;
+
+      // Build table rows
+      const tbody = document.querySelector("#studentTable tbody");
+      const data = [
+        ["Student ID:", id],
+        ["Student Name:", name],
+        ["Birthday:", birthday],
+        ["Gender:", gender],
+      ];
+
+      data.forEach((item) => {
+        const row = document.createElement("tr");
+        const cell1 = document.createElement("td");
+        const cell2 = document.createElement("td");
+
+        cell1.textContent = item[0];
+        cell2.textContent = item[1];
+
+        row.appendChild(cell1);
+        row.appendChild(cell2);
+
+        // Mouse events
+        row.addEventListener("mouseover", () => {
+          row.style.backgroundColor = "blue";
+          row.style.color = "white";
+        });
+        row.addEventListener("mouseout", () => {
+          row.style.backgroundColor = "white";
+          row.style.color = "black";
+        });
+
+        tbody.appendChild(row);
+      });
+    </script>
+  </body>
+</html>
